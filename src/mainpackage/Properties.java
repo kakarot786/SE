@@ -16,6 +16,17 @@ public class Properties {
         }
         System.out.println("Periodic: False");
     }
+
+    void isIdempotent(int[][] matrix,int rows){
+        int[][] matrixR = matrix;
+        matrixR = op.multiplyMatrix(rows,rows,rows,rows,matrix,matrixR);
+        if(Arrays.deepEquals(matrixR,matrix)){
+            System.out.println("Idempotent: True");
+        }
+        else{
+            System.out.println("Idempotent: False");
+        }
+    }
     void isInvolutory(int[][] matrix, int rows){
         int[][] matrixR = matrix;
         int[][] identityMatrix =  identity(rows);
