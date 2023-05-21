@@ -56,4 +56,25 @@ public class Properties {
         return identityMatrix;
     }
 
+
+    void isNilpotent(int[][] matrix,int rows) {
+        int[][] nullmatrix = new int[rows][rows];
+        int[][] matrixR = op.multiplyMatrix(rows, rows, rows, rows, matrix, matrix);
+        for (int i = 1; i <=5; i++){
+            matrixR = op.multiplyMatrix(rows,rows,rows,rows,matrix,matrixR);
+            if(Arrays.deepEquals(matrixR,nullmatrix)){
+                System.out.println("Nilpotent: True at K = " + i);
+                return;
+            }
+        }
+        System.out.println("Nilpotent: False");
+    }
+
+    void Algebra(int[][] matrix,int rows){
+        isPeriodic(matrix,rows);
+        isNilpotent(matrix,rows);
+        isIdempotent(matrix,rows);
+        isInvolutory(matrix,rows);
+    }
+
 }
