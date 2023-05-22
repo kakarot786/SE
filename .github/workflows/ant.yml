@@ -22,4 +22,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Build with Ant
-      run: ant -noinput -buildfile build.xml
+      run: ant compile
+      
+     - name: Create JAR file
+        run: ant jar
+
+      - name: Run JAR file
+        run: java -jar build/Main.jar  
