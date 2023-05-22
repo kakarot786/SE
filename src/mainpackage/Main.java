@@ -1,10 +1,9 @@
 package mainpackage;
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in)
         System.out.println("Please Enter the number of rows of matrix A:");
         int rowsA = sc.nextInt();
         int[][] matrixA = new int[rowsA][rowsA];
