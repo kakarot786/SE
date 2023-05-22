@@ -1,31 +1,29 @@
-name: Java Ant Build
+name: Java CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
-    
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11' # Choose the appropriate Java version
-
-      - name: Install Ant
-        run: sudo apt-get install ant
-
-      - name: Compile
-        run: ant compile
-
-      - name: Create JAR file
-        run: ant jar
-
-      - name: Run JAR file
-        run: java -jar build/Main.jar
+    - uses: actions/checkout@v3
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+    - name: Build with Ant
+      run: ant -noinput -buildfile build.xml
+    - name: Compile and package JAR
+      run: |
+        mkdir -p build
+        javac -d build src/*.java
+        jar -cvf myproject.jar -C build/ .
+    - name: Run JAR
+      run: java -jar myproject.jar || exit 1
