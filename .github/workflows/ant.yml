@@ -22,8 +22,8 @@ jobs:
       run: ant -noinput -buildfile build.xml
     - name: Compile and package JAR
       run: |
-        mkdir -p build
-        javac -d build src/*.java
-        jar -cvf myproject.jar -C build/ .
+        ant clean
+        ant compile
+        ant jar
     - name: Run JAR
-      run: java -jar myproject.jar || exit 1
+      run: java -jar build/Main.jar || exit 1
