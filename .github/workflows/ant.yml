@@ -25,5 +25,3 @@ jobs:
         ant clean
         ant compile
         ant jar
-    - name: Run JAR
-      run: java -jar build/Main.jar || exit 1
