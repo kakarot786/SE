@@ -2,7 +2,7 @@
 
 # Matrix Properties Checker
 
-This repository contains a simple code implementation to check various properties of a matrix, including periodicity, involutivity, idempotency, and nilpotency. The code is written in [programming language], making it easy to understand and use.
+This repository contains a simple code implementation to check various properties of a matrix, including periodicity, involutivity, idempotency, and nilpotency. The code is written in JAVA, making it easy to understand and use.
 
 ## Contributors
 
