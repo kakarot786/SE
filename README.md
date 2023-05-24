@@ -8,8 +8,8 @@ This repository contains a simple code implementation to check various propertie
 
 This project is maintained by the following contributors:
 
-1. [Contributor 1](https://github.com/kakarot786): Lead developer and primary maintainer.
-2. [Contributor 2](https://github.com/Owais717): Contributor and tester.
+1. [Contributor 1: Syed Fakhir Hassan Naqvi](https://github.com/kakarot786): Lead developer and primary maintainer.
+2. [Contributor 2: Syed Owais Ali](https://github.com/Owais717): Contributor and tester.
 
 ## Features
 
